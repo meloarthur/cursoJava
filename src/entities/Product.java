@@ -1,6 +1,6 @@
 package entities;
 
-public class Produto {
+public class Product {
 
 	public String name;
 	public double price;

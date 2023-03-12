@@ -2,7 +2,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Produto;
+import entities.Product;
 
 public class Program {
 
@@ -11,33 +11,34 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
 		
-		Produto produto = new Produto();
+		Product product = new Product();
 		
 		System.out.println("Enter the product data:");
 		System.out.print("Name: ");
-		produto.name = scan.next();
+		product.name = scan.next();
 		
 		System.out.print("Price: ");
-		produto.price = scan.nextDouble();
+		product.price = scan.nextDouble();
 		
 		System.out.print("Quantity in stock: ");
-		produto.quantity = scan.nextInt();
+		product.quantity = scan.nextInt();
 		
-		System.out.printf("Product data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", produto.name, produto.price, produto.quantity, produto.totalValueInStock());
+		System.out.printf("Product data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", product.name, product.price, product.quantity, product.totalValueInStock());
 
 		System.out.print("Enter the number of products to be added in stock: ");
 		int qtdAdd = scan.nextInt();
-		produto.addProducts(qtdAdd);
+		product.addProducts(qtdAdd);
 		
-		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", produto.name, produto.price, produto.quantity, produto.totalValueInStock());
+		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", product.name, product.price, product.quantity, product.totalValueInStock());
 		
 		System.out.print("Enter the number of products to be removed from stock: ");
 		int qtdRemove = scan.nextInt();
-		produto.removeProducts(qtdRemove);
+		product.removeProducts(qtdRemove);
 		
-		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", produto.name, produto.price, produto.quantity, produto.totalValueInStock());
+		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", product.name, product.price, product.quantity, product.totalValueInStock());
 		
 		scan.close();
+		
 	}
 
 }
