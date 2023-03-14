@@ -1,8 +1,9 @@
 package application;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Product;
+import entities.Grade;
 
 public class Program {
 
@@ -11,31 +12,16 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
 		
-		Product product = new Product();
+		Grade grade = new Grade();
 		
-		System.out.println("Enter the product data:");
-		System.out.print("Name: ");
-		product.name = scan.next();
+		grade.name = scan.nextLine();
+		grade.grade1 = scan.nextDouble();
+		grade.grade2 = scan.nextDouble();
+		grade.grade3 = scan.nextDouble();
 		
-		System.out.print("Price: ");
-		product.price = scan.nextDouble();
+		grade.calculateGrade();
 		
-		System.out.print("Quantity in stock: ");
-		product.quantity = scan.nextInt();
-		
-		System.out.printf("Product data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", product.name, product.price, product.quantity, product.totalValueInStock());
-
-		System.out.print("Enter the number of products to be added in stock: ");
-		int qtdAdd = scan.nextInt();
-		product.addProducts(qtdAdd);
-		
-		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", product.name, product.price, product.quantity, product.totalValueInStock());
-		
-		System.out.print("Enter the number of products to be removed from stock: ");
-		int qtdRemove = scan.nextInt();
-		product.removeProducts(qtdRemove);
-		
-		System.out.printf("Updated data: %s, $ %.2f, %d units, Total: $ %.2f%n%n", product.name, product.price, product.quantity, product.totalValueInStock());
+		System.out.println(grade);
 		
 		scan.close();
 		
