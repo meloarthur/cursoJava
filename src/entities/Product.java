@@ -6,6 +6,16 @@ public class Product {
 	public double price;
 	public int quantity;
 	
+	public String toString() {
+		return this.name
+				+ ", $ " 
+				+ String.format("%.2f",this.price) 
+				+ ", " 
+				+ this.quantity 
+				+ " units, Total: $ " 
+				+ String.format("%.2f",this.totalValueInStock());
+	}
+	
 	public double totalValueInStock() {
 		return this.price * this.quantity;
 	}
